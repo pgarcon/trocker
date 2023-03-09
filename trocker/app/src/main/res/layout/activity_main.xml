@@ -4,20 +4,163 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparent_black"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="412dp"
-        android:layout_height="71dp"
-        android:text="Troker"
-        android:background="@color/light_blue"
-        android:gravity="center"
+    <ImageView
+        android:id="@+id/titre"
+        android:layout_width="414dp"
+        android:layout_height="81dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo_crocker_2" />
+
+    <TextView
+        android:id="@+id/bienvenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenu sur Trocker"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre"
+        app:layout_constraintVertical_bias="0.045" />
+
+
+    <TextView
+        android:id="@+id/textmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mail"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bienvenu"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <EditText
+        android:id="@+id/inputMail"
+        android:layout_width="328dp"
+        android:layout_height="42dp"
+        android:hint="mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textmail"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textMdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mot De Passe"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputMail"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <EditText
+        android:id="@+id/inputMdp"
+        android:layout_width="286dp"
+        android:layout_height="42dp"
+        android:hint="mot de passe"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMdp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/oeilImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/inputMdp"
+        app:layout_constraintTop_toBottomOf="@+id/inputMail"
+        app:layout_constraintVertical_bias="0.129"
+        app:srcCompat="@drawable/ic_action_name" />
+
+    <Button
+        android:id="@+id/connexionBtn"
+        android:layout_width="288dp"
+        android:layout_height="64dp"
+        android:text="Connexion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputMdp"
+        app:layout_constraintVertical_bias="0.093" />
+
+    <Button
+        android:id="@+id/pasDeCompteBtn"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:text="Pas de compte ?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connexionBtn"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <Button
+        android:id="@+id/mdpOublie"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:text="Un trou de mémoire ?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@+id/pasDeCompteBtn"
+        app:layout_constraintTop_toBottomOf="@+id/connexionBtn"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <Button
+        android:id="@+id/cguBtn"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:text="Conditions générales d'utilisations"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connexionBtn"
+        app:layout_constraintVertical_bias="0.762" />
+
+    <Button
+        android:id="@+id/contactBtn"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:text="Nous contacter"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cguBtn"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
