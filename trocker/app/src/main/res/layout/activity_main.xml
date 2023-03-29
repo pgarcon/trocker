@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/transparent_black"
+    android:background="@color/ic_banner_background"
     tools:context=".MainActivity">
 
     <ImageView
@@ -106,6 +106,7 @@
         android:layout_width="288dp"
         android:layout_height="64dp"
         android:text="Connexion"
+        android:onClick="connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -117,6 +118,7 @@
         android:id="@+id/pasDeCompteBtn"
         android:layout_width="115dp"
         android:layout_height="85dp"
+        android:onClick="creerCompte"
         android:text="Pas de compte ?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

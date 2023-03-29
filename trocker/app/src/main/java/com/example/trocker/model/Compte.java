@@ -6,15 +6,33 @@ public class Compte {
     private int id_compte;
     private String nom;
     private String prenom;
-    private Date date;
+    private String date;
     private String adresse_mail;
     private String mot_de_passe;
-    private String note_compte;
+    private int note_compte;
     private String pays;
     private String ville;
     private String adresse;
     private String complement_adresse;
     private String code_postale;
+
+    public Compte(){}
+    public Compte(String nom, String prenom, String date, String mail, String mdp, String pays, String ville, String adresse, String complementAdress, String codePostal){
+        this.nom = nom;
+        this.prenom = prenom;
+        this.date = date;
+        this.adresse_mail = mail;
+        this.code_postale = codePostal;
+        this.mot_de_passe = mdp;
+        this.pays = pays;
+        this.ville = ville;
+        this.adresse = adresse;
+        this.complement_adresse = complementAdress;
+
+        this.note_compte = -1;
+    }
+
+
 
     /*Getter and setter*/
 
@@ -42,11 +60,11 @@ public class Compte {
         this.prenom = prenom;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -66,11 +84,11 @@ public class Compte {
         this.mot_de_passe = mot_de_passe;
     }
 
-    public String getNote_compte() {
+    public int getNote_compte() {
         return note_compte;
     }
 
-    public void setNote_compte(String note_compte) {
+    public void setNote_compte(int note_compte) {
         this.note_compte = note_compte;
     }
 

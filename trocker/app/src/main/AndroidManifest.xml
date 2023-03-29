@@ -12,8 +12,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Trocker"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".Application"
+            android:exported="false"
+            android:label="@string/title_activity_application" />
+        <activity
+            android:name=".CreateAccountActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
