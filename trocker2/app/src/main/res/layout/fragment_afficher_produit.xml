@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_prod"
     tools:context=".AfficherProduit">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
+        android:id="@+id/fragment_page_rootview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        tools:context="com.openclassrooms.myamazingviewpager.Controllers.Fragments.PageFragment"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/titreProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:textColor="@color/black"
+            android:text="image1"/>
+
+        <ImageView
+            android:id="@+id/imageProduit"
+            android:layout_width="270dp"
+            android:layout_height="348dp"
+            android:src="@drawable/one" />
+
+        <TextView
+            android:id="@+id/descrProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:text="image1"/>
+
+    </LinearLayout>
 
 </FrameLayout>

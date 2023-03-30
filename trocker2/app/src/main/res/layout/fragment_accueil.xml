@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris"
+    android:id="@+id/fragment_acc"
     tools:context=".Accueil">
 
 

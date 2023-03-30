@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,6 +66,24 @@ public class AfficherProduit extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_afficher_produit, container, false);
+        View result = inflater.inflate(R.layout.fragment_afficher_produit, container, false);
+
+        ImageView imageV = result.findViewById(R.id.imageProduit);
+        TextView titreV =  result.findViewById(R.id.titreProd);
+        TextView descrV =  result.findViewById(R.id.descrProd);
+
+
+        // 5 - Get data from Bundle (created in method newInstance)
+        String image = getArguments().getString(IMAGE, "img");
+        String titre = getArguments().getString(TITRE, "titre");
+        String descr = getArguments().getString(DESCRIPTION, "description");
+
+        titreV.setText(titre);
+        descrV.setText(descr);
+
+        Log.e(getClass().getSimpleName(), "onCreateView called for fragment "+ titre);
+
+        return result;
+
     }
 }

@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class Produits extends Fragment {
 
     private static final String KEY_POSITION="position";
-    private String arg;
+    private int arg;
 
     public Produits() {
         // Required empty public constructor
@@ -44,7 +44,7 @@ public class Produits extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            arg = getArguments().getString(KEY_POSITION);
+            arg = getArguments().getInt(KEY_POSITION);
         }
     }
 
