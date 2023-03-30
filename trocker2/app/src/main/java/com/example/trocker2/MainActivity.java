@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.EditText;
 import com.example.trocker.model.BddCompte;
 import com.example.trocker.model.Compte;
+import com.example.trocker2.model.Bdd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,19 +20,12 @@ import kotlin.collections.ArrayDeque;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Compte> listeCompte = new ArrayList<>();
-    private Compte actif = null;
-
-    public Compte getActif(){
-        return this.actif;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bdd.initCompte();
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        initCompte();
     }
 
     public void creerCompte(View view){
@@ -53,20 +47,16 @@ public class MainActivity extends AppCompatActivity {
         //Pour check la connexion
         boolean connect = false;
 
-        //On vérifie les ids et mdp
-        for(Compte c : listeCompte){
-            System.out.println("C'est "+ c.getNom());
-
+        //On vérifie l'id et le mdp
+        for(Compte c : Bdd.getListeCompte()){
             if(c.getAdresse_mail().equals(email)){
                 if(c.getMot_de_passe().equals(mdp)){
                     System.out.println("Trouvé");
-                    this.actif = c;
+                    Bdd.setActif(c);
                     connect = true;
                 }
             }
         }
-
-        System.out.println(connect);
 
         //On change de page et on charge le reste de l'appli
         if(connect){
@@ -88,10 +78,5 @@ public class MainActivity extends AppCompatActivity {
                     });
             alert.show();
         }
-    }
-
-    private void initCompte(){
-        listeCompte.add(new Compte("Lemoult", "Nicolas", "", "nicolas.lemoult@gmail.com", "a12345", "France","Le Mans", "10 rue nationale", "", "72100"));
-        listeCompte.add(new Compte("Garcon", "Pierre", "", "pierre.garcon@gmail.com", "a12345", "France","Le Mans", "10 rue nationale", "", "72100"));
     }
 }

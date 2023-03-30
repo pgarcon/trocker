@@ -1,15 +1,26 @@
 package com.example.trocker2;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import com.example.trocker.model.Compte;
+import com.example.trocker2.model.Bdd;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreateAccountActivity extends AppCompatActivity {
     private Compte compte;
+    private MainActivity main;
+
+    public void setMain(MainActivity main) {
+        this.main = main;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +29,35 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     public void createCompte(View v){
-        this.compte = recupererInfos();
-        System.out.println("Compte créer : " + this.compte.getNom());
+
+        Compte c = recupererInfos();
+
+        boolean mail = false;
+
+        for(Compte test : Bdd.getListeCompte()){
+            if(c.getAdresse_mail().equals(test.getAdresse_mail())) mail = true;
+        }
+
+        if(mail) {
+            AlertDialog.Builder mailExiste = new AlertDialog.Builder(this);
+            mailExiste.setMessage("Email déjà pris");
+            mailExiste.setCancelable(true);
+
+            mailExiste.setPositiveButton(
+                    "Ok",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            mailExiste.show();
+        }
+        else {
+            Bdd.addCompte(c);
+        }
     }
 
     public void retourMainPage(View v){
-        this.compte = recupererInfos();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

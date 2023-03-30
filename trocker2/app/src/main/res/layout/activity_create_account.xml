@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gris"
+    android:background="@color/white"
     tools:context=".CreateAccountActivity">
 
 
@@ -74,7 +74,6 @@
                 android:hint="nom"
                 android:padding="10dp"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -96,9 +95,8 @@
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
-                android:hint="prenom"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -120,9 +118,8 @@
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
-                android:hint="Date de naissance"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -143,11 +140,11 @@
                 android:layout_width="328dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
+                android:textColor="@color/black"
                 android:background="@android:color/transparent"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -170,8 +167,8 @@
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
                 android:hint="mot de passe"
+                android:textColor="@color/black"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -194,8 +191,8 @@
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
                 android:hint="pays"
+                android:textColor="@color/black"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -218,8 +215,8 @@
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
                 android:hint="ville"
+                android:textColor="@color/black"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -242,8 +239,8 @@
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
                 android:hint="adresse"
+                android:textColor="@color/black"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -266,8 +263,8 @@
                 android:layout_margin="16dp"
                 android:background="@android:color/transparent"
                 android:hint="complément d'adresse"
+                android:textColor="@color/black"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -291,8 +288,8 @@
                 android:background="@android:color/transparent"
                 android:hint="Code Postale"
                 android:inputType="number"
+                android:textColor="@color/black"
                 android:padding="10dp"
-                android:textColorHint="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
