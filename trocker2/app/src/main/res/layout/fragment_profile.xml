@@ -14,7 +14,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="419dp"
+            android:layout_height="466dp"
             android:text="" />
 
         <Button
@@ -22,6 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="deleteAccount"
-            android:text="Button" />
+            android:text="Supprimer mon compte" />
     </LinearLayout>
 </FrameLayout>
