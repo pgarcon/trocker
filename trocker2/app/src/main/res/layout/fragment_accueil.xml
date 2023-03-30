@@ -1,25 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris"
     tools:context=".Accueil">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
 
     <LinearLayout
         android:id="@+id/fragment_page_rootview"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context="com.openclassrooms.myamazingviewpager.Controllers.Fragments.PageFragment"
         android:gravity="center">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_weight="0"
+            android:text="filtres" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerProduit"
+            android:layout_width="364dp"
+            android:layout_height="398dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/pouceHaut"
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:src="@drawable/thumb_up" />
+
+            <ImageView
+                android:id="@+id/coeur"
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:src="@drawable/heart" />
+
+            <ImageView
+                android:id="@+id/pouceBas"
+                android:layout_width="135dp"
+                android:layout_height="99dp"
+                android:layout_weight="0"
+                android:src="@drawable/dislike" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/fragment_page_title"
@@ -29,6 +64,7 @@
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#fff"/>
+
 
     </LinearLayout>
 

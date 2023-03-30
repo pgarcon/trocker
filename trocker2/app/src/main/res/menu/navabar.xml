@@ -14,6 +14,6 @@
         android:title="" />
     <item
         android:id="@+id/barreTacheImage4"
-        android:icon="@drawable/warning_fill"
+        android:icon="@drawable/person"
         android:title="" />
 </menu>

@@ -54,14 +54,12 @@ public class Accueil extends Fragment {
         // 3 - Get layout of PageFragment
         View result = inflater.inflate(R.layout.fragment_accueil, container, false);
 
-        // 4 - Get widgets from layout and serialise it
-        LinearLayout rootView= (LinearLayout) result.findViewById(R.id.fragment_page_rootview);
-        TextView textView= (TextView) result.findViewById(R.id.fragment_page_title);
+        TextView textView= result.findViewById(R.id.fragment_page_title);
 
         // 5 - Get data from Bundle (created in method newInstance)
         int position = getArguments().getInt(KEY_POSITION, -1);
 
-        textView.setText("Page numéro "+position);
+        textView.setText("Bienvenu "+position);
 
         Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
 

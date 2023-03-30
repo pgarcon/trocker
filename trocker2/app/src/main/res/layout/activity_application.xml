@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".Application">
 
+    <ImageView
+        android:id="@+id/titre"
+        android:layout_width="414dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo_crocker_2" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbar"
         android:layout_width="415dp"
         android:layout_height="59dp"
-        android:background="@color/white"
+        android:background="@color/color_blue_app"
         app:itemIconTint="@drawable/navbarselect"
         app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,14 +36,13 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="416dp"
-        android:layout_height="637dp"
+        android:layout_width="415dp"
+        android:layout_height="589dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.55" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

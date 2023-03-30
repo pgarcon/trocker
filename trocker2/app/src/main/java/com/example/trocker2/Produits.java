@@ -55,8 +55,7 @@ public class Produits extends Fragment {
         View result = inflater.inflate(R.layout.fragment_produits, container, false);
 
         // 4 - Get widgets from layout and serialise it
-        LinearLayout rootView= (LinearLayout) result.findViewById(R.id.fragment_page_rootview);
-        TextView textView= (TextView) result.findViewById(R.id.fragment_page_title);
+        TextView textView= result.findViewById(R.id.fragment_page_title);
 
         // 5 - Get data from Bundle (created in method newInstance)
         int position = getArguments().getInt(KEY_POSITION, -1);
