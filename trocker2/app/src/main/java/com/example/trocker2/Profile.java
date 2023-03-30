@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,14 +18,8 @@ import android.view.ViewGroup;
  */
 public class Profile extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String KEY_POSITION="position";
+    private String arg;
 
     public Profile() {
         // Required empty public constructor
@@ -31,17 +28,14 @@ public class Profile extends Fragment {
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Profile.
+     * @return A new instance of fragment Accueil.
      */
     // TODO: Rename and change types and number of parameters
-    public static Profile newInstance(String param1, String param2) {
+    public static Profile newInstance(int param1) {
         Profile fragment = new Profile();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt(KEY_POSITION, param1);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -50,15 +44,27 @@ public class Profile extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            arg = getArguments().getString(KEY_POSITION);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        // 3 - Get layout of PageFragment
+        View result = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        // 4 - Get widgets from layout and serialise it
+        LinearLayout rootView= (LinearLayout) result.findViewById(R.id.fragment_page_rootview);
+        TextView textView= (TextView) result.findViewById(R.id.fragment_page_title);
+
+        // 5 - Get data from Bundle (created in method newInstance)
+        int position = getArguments().getInt(KEY_POSITION, -1);
+
+        textView.setText("Page numéro "+position);
+
+        Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
+
+        return result;
     }
 }

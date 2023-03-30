@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void connexion(View v){
-        //Intent intent = new Intent(this, Application.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, Application.class);
+        startActivity(intent);
     }
 }

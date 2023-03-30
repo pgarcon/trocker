@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/barreTacheImage1"
+        android:icon="@drawable/home_logo"
+        android:title="" />
+    <item
+        android:id="@+id/barreTacheImage2"
+        android:icon="@drawable/shop_basket"
+        android:title="" />
+    <item
+        android:id="@+id/barreTacheImage3"
+        android:icon="@drawable/double_arrow"
+        android:title="" />
+    <item
+        android:id="@+id/barreTacheImage4"
+        android:icon="@drawable/warning_fill"
+        android:title="" />
+</menu>

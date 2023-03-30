@@ -2,6 +2,7 @@ package com.example.trocker2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,8 +22,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         System.out.println("Compte créer : " + this.compte.getNom());
     }
 
-    public void retourMainPage(){
+    public void retourMainPage(View v){
         this.compte = recupererInfos();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     private com.example.trocker.model.Compte recupererInfos(){
