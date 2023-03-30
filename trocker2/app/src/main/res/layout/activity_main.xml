@@ -51,11 +51,12 @@
 
     <EditText
         android:id="@+id/inputMail"
-        android:layout_width="328dp"
-        android:layout_height="42dp"
+        android:layout_width="298dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_border"
         android:hint="mail"
-        android:textColor="@color/black"
         android:inputType="textEmailAddress"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.385"
@@ -79,29 +80,18 @@
 
     <EditText
         android:id="@+id/inputMdp"
-        android:layout_width="286dp"
-        android:layout_height="42dp"
+        android:layout_width="299dp"
+        android:layout_height="41dp"
+        android:background="@drawable/edittext_border"
         android:hint="mot de passe"
-        android:textColor="@color/black"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textMdp"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/oeilImg"
-        android:layout_width="36dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/inputMdp"
-        app:layout_constraintTop_toBottomOf="@+id/inputMail"
-        app:layout_constraintVertical_bias="0.129"
-        app:srcCompat="@drawable/oeil" />
 
     <Button
         android:id="@+id/connexionBtn"
@@ -159,6 +149,7 @@
         android:layout_width="328dp"
         android:layout_height="40dp"
         android:text="Nous contacter"
+        android:onClick="contact"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -24,7 +24,7 @@
         android:id="@+id/creerCompteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenu dans la création d'un compte \n Sur Tocker"
+        android:text="Bienvenu dans la création d'un compte \n Sur Trocker"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -67,10 +67,10 @@
 
             <EditText
                 android:id="@+id/nomSaisie"
-                android:layout_width="328dp"
+                android:layout_width="280dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="nom"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -79,7 +79,7 @@
 
             <TextView
                 android:id="@+id/prenomText"
-                android:layout_width="328dp"
+                android:layout_width="299dp"
                 android:layout_height="42dp"
                 android:layout_marginTop="25dp"
                 android:text="Prenom : "
@@ -91,10 +91,10 @@
 
             <EditText
                 android:id="@+id/prenomSaisie"
-                android:layout_width="328dp"
+                android:layout_width="283dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -114,10 +114,10 @@
 
             <EditText
                 android:id="@+id/dateNaisSaisie"
-                android:layout_width="328dp"
+                android:layout_width="283dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -137,14 +137,14 @@
 
             <EditText
                 android:id="@+id/emailSaisie"
-                android:layout_width="328dp"
+                android:layout_width="281dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:textColor="@color/black"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -162,13 +162,13 @@
 
             <EditText
                 android:id="@+id/mdpSaisie"
-                android:layout_width="328dp"
+                android:layout_width="280dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="mot de passe"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -186,13 +186,13 @@
 
             <EditText
                 android:id="@+id/paysSaisie"
-                android:layout_width="328dp"
+                android:layout_width="286dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="pays"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -210,13 +210,13 @@
 
             <EditText
                 android:id="@+id/villeSaisie"
-                android:layout_width="328dp"
+                android:layout_width="286dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="ville"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -234,13 +234,13 @@
 
             <EditText
                 android:id="@+id/adresseSaisie"
-                android:layout_width="328dp"
+                android:layout_width="281dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="adresse"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -258,13 +258,13 @@
 
             <EditText
                 android:id="@+id/cmpltAdresseSaisie"
-                android:layout_width="328dp"
+                android:layout_width="286dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="complément d'adresse"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -282,43 +282,35 @@
 
             <EditText
                 android:id="@+id/codePostalSaisie"
-                android:layout_width="328dp"
+                android:layout_width="281dp"
                 android:layout_height="42dp"
                 android:layout_margin="16dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/edittext_border"
                 android:hint="Code Postale"
                 android:inputType="number"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <Button
                 android:id="@+id/creerCompteBtn"
-                android:layout_width="288dp"
-                android:layout_height="64dp"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
                 android:layout_gravity="center_vertical"
                 android:onClick="createCompte"
-                android:text="Créer"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:text="Créer" />
+
+            <Button
+                android:id="@+id/retourBtn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_gravity="bottom"
+                android:onClick="retourMainPage"
+                android:text="RETOUR" />
 
         </LinearLayout>
 
     </ScrollView>
-
-    <Button
-        android:id="@+id/retourBtn"
-        android:layout_width="150dp"
-        android:layout_height="64dp"
-        android:layout_gravity="bottom"
-        android:text="RETOUR"
-        android:onClick="retourMainPage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/titre"
-        app:layout_constraintVertical_bias="0.97" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

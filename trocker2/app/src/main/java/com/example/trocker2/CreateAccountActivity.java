@@ -53,7 +53,26 @@ public class CreateAccountActivity extends AppCompatActivity {
             mailExiste.show();
         }
         else {
-            Bdd.addCompte(c);
+            if(c.getNom().equals("") || c.getMot_de_passe().equals("") || c.getAdresse_mail().equals("") || c.getCode_postale().equals("")
+            || c.getDate().equals("") || c.getPays().equals("") || c.getPrenom().equals("") || c.getVille().equals("")){
+                AlertDialog.Builder champVide = new AlertDialog.Builder(this);
+                champVide.setMessage("Un ou plusieurs champs est(sont) vide(s)");
+                champVide.setCancelable(true);
+
+                champVide.setPositiveButton(
+                        "Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                champVide.show();
+            }
+            else {
+                Bdd.addCompte(c);
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
         }
     }
 

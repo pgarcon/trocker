@@ -79,4 +79,19 @@ public class MainActivity extends AppCompatActivity {
             alert.show();
         }
     }
+
+    public void contact(View v){
+        AlertDialog.Builder contact = new AlertDialog.Builder(this);
+        contact.setMessage("Nos email : \nnicolas.lemoult@outlook.fr\npierre.garcon@outlook.fr");
+        contact.setCancelable(true);
+
+        contact.setPositiveButton(
+                "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        contact.show();
+    }
 }
