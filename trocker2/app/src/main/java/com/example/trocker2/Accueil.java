@@ -27,6 +27,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Accueil extends Fragment {
 
     private static final String KEY_POSITION="position";
+    private PageAdaptateur pageAdaptateur;
     private String pos;
     private ViewPager viewPager;
 
@@ -64,7 +65,6 @@ public class Accueil extends Fragment {
         View result = inflater.inflate(R.layout.fragment_accueil, container, false);
 
         AfficherProduit fragment = (AfficherProduit) getChildFragmentManager().findFragmentById(R.id.fragment_prod);
-        PageAdaptateur pageAdaptateur = new PageAdaptateur(getActivity().getSupportFragmentManager());
 
         ViewPager viewPager = (ViewPager) result.findViewById(R.id.viewPagerProduit);
 
@@ -83,24 +83,39 @@ public class Accueil extends Fragment {
         if(viewPager == null){
             System.out.println("\n\nnull\n\n");
         }else {
-            pageAdaptateur = new PageAdaptateur(getActivity().getSupportFragmentManager());
-            pageAdaptateur.addFragment(AfficherProduit.newInstance("one", "Produit1", "mon produit 1"), "AfficherProduit");
-            pageAdaptateur.addFragment(AfficherProduit.newInstance("two", "Produit2", "mon produit 2"), "AfficherProduit");
-            pageAdaptateur.addFragment(AfficherProduit.newInstance("three", "Produit3", "mon produit 3"), "AfficherProduit");
+            this.pageAdaptateur = new PageAdaptateur(getActivity().getSupportFragmentManager());
+            this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"), "AfficherProduit");
+            this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"), "AfficherProduit");
+            this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit3", "mon produit 3"), "AfficherProduit");
 
             // Connecter l'adaptateur de page au ViewPager2
             viewPager.setAdapter(pageAdaptateur);
+            viewPager.setCurrentItem(1, true);
         }
 
         //textView.setText("Bienvenu " + position);
         Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
 
-        return result;
-    }
+        // Écouter les événements de changement de page dans le ViewPager
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        this.viewPager = getView().findViewById(R.id.viewPager);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                //pageAdaptateur.addFragmentAt(AfficherProduit.newInstance(R.drawable.four, "Produit2", "mon produit 2"), 0);
+                //pageAdaptateur.addFragmentAt(AfficherProduit.newInstance(R.drawable.four, "Produit2", "mon produit 2"), 2);
+                //pageAdaptateur.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        return result;
     }
 }

@@ -25,7 +25,7 @@ public class AfficherProduit extends Fragment {
     private static final String DESCRIPTION = "description";
 
     // TODO: Rename and change types of parameters
-    private String image;
+    private int image;
     private String titre;
     private String description;
 
@@ -42,10 +42,10 @@ public class AfficherProduit extends Fragment {
      * @return A new instance of fragment AfficherProduit.
      */
     // TODO: Rename and change types and number of parameters
-    public static AfficherProduit newInstance(String image, String titre, String description) {
+    public static AfficherProduit newInstance(int image, String titre, String description) {
         AfficherProduit fragment = new AfficherProduit();
         Bundle args = new Bundle();
-        args.putString(IMAGE, image);
+        args.putInt(IMAGE, image);
         args.putString(TITRE, titre);
         args.putString(DESCRIPTION, description);
         fragment.setArguments(args);
@@ -56,7 +56,7 @@ public class AfficherProduit extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            image = getArguments().getString(IMAGE);
+            image = getArguments().getInt(IMAGE);
             titre = getArguments().getString(TITRE);
             description = getArguments().getString(DESCRIPTION);
         }
@@ -74,12 +74,14 @@ public class AfficherProduit extends Fragment {
 
 
         // 5 - Get data from Bundle (created in method newInstance)
-        String image = getArguments().getString(IMAGE, "img");
+        int image = getArguments().getInt(IMAGE, -1);
         String titre = getArguments().getString(TITRE, "titre");
         String descr = getArguments().getString(DESCRIPTION, "description");
 
+
         titreV.setText(titre);
         descrV.setText(descr);
+        imageV.setImageResource(image);
 
         Log.e(getClass().getSimpleName(), "onCreateView called for fragment "+ titre);
 

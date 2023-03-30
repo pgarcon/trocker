@@ -38,4 +38,8 @@ public class PageAdaptateur extends FragmentPagerAdapter {
     public int getCount() {
         return listFrag.size();
     }
+
+    public void addFragmentAt(Fragment fragment, int position){
+        listFrag.add(position, fragment);
+    }
 }
