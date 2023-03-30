@@ -28,7 +28,7 @@ public class Accueil extends Fragment {
 
     private static final String KEY_POSITION="position";
     private PageAdaptateur pageAdaptateur;
-    private String pos;
+    private int pos;
     private ViewPager viewPager;
 
     public Accueil() {
@@ -54,7 +54,7 @@ public class Accueil extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            pos = String.valueOf(getArguments().getInt(KEY_POSITION));
+            pos = getArguments().getInt(KEY_POSITION);
         }
     }
 
