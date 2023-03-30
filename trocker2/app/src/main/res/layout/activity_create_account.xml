@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris"
+    tools:context=".CreateAccountActivity">
+
+
+    <ImageView
+        android:id="@+id/titre"
+        android:layout_width="414dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo_crocker_2" />
+
+    <TextView
+        android:id="@+id/creerCompteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenu dans la création d'un compte \n Sur Tocker"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre"
+        app:layout_constraintVertical_bias="0.064" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="322dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="25dp"
+        android:fillViewport="true"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creerCompteText"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nomText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Nom : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/nomSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="nom"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/prenomText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Prenom : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/prenomSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="prenom"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Date de naissance : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/dateNaisSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="Date de naissance"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Adresse Email : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/emailSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/mdpText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Mot de passe : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/mdpSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="mot de passe"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/paysText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Pays : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/paysSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="pays"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/villeText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Ville : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/villeSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="ville"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/adresseText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Adresse : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/adresseSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="adresse"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/cmpltAdresseText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Complément d'adresse : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/cmpltAdresseSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="complément d'adresse"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/codePostalText"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="25dp"
+                android:text="Code postale : "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/codePostalSaisie"
+                android:layout_width="328dp"
+                android:layout_height="42dp"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="Code Postale"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/creerCompteBtn"
+                android:layout_width="288dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
+                android:onClick="createCompte"
+                android:text="Créer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/retourBtn"
+        android:layout_width="150dp"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:text="RETOUR"
+        android:onClick="retourMainPage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titre"
+        app:layout_constraintVertical_bias="0.97" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.trocker;
+package com.example.trocker2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
-
 import com.example.trocker.model.BddCompte;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //BddCompte model = new BddCompte();
-        //model.execute();
+        BddCompte model = new BddCompte();
+        model.execute();
         setContentView(R.layout.activity_main);
     }
 
@@ -30,10 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void connexion(View v){
-        EditText tp = (EditText) findViewById (R.id.inputMail);
-        String chaine = tp.getText().toString();
-
-        Intent intent = new Intent(this, Application.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, Application.class);
+        //startActivity(intent);
     }
 }

@@ -9,7 +9,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.StackView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +16,6 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.trocker.MainAdapter;
 import com.example.trocker.R;
 import com.example.trocker.databinding.FragmentHomeBinding;
 
@@ -38,7 +36,6 @@ public class HomeFragment extends Fragment implements GestureDetector.OnGestureL
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
@@ -57,19 +54,25 @@ public class HomeFragment extends Fragment implements GestureDetector.OnGestureL
             imageView.setImageBitmap(images.get(currentImageIndex));
         }
 
-        return root;
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_MOVE){
+                    gestureDetector.onTouchEvent(motionEvent);
+                    return getActivity().onTouchEvent(motionEvent);
+                }
+                return true;
+            }
+        });
+
+        return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        gestureDetector.onTouchEvent(event);
-        return getActivity().onTouchEvent(event);
     }
 
     @Override
