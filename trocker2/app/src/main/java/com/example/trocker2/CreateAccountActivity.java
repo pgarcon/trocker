@@ -15,13 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateAccountActivity extends AppCompatActivity {
-    private Compte compte;
-    private MainActivity main;
-
-    public void setMain(MainActivity main) {
-        this.main = main;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,7 +1,10 @@
 package com.example.trocker2;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -11,12 +14,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.trocker2.model.Bdd;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Profile#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Profile extends Fragment {
+    private boolean delete;
 
     private static final String KEY_POSITION="position";
     private String arg;
@@ -25,12 +31,6 @@ public class Profile extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment Accueil.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Profile newInstance(int param1) {
         Profile fragment = new Profile();
         Bundle args = new Bundle();
@@ -53,16 +53,6 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         // 3 - Get layout of PageFragment
         View result = inflater.inflate(R.layout.fragment_profile, container, false);
-
-        // 4 - Get widgets from layout and serialise it
-        TextView textView= result.findViewById(R.id.fragment_page_title);
-
-        // 5 - Get data from Bundle (created in method newInstance)
-        int position = getArguments().getInt(KEY_POSITION, -1);
-
-        textView.setText("Page numéro "+position);
-
-        Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
 
         return result;
     }

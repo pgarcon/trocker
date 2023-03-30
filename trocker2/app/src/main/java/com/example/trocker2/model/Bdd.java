@@ -35,4 +35,8 @@ public class Bdd {
     public static void setActif(Compte c){
         actif = c;
     }
+
+    public static void deleteCompte(){
+        listeCompte.remove(actif);
+    }
 }

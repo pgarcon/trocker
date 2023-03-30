@@ -6,21 +6,22 @@
     android:background="@color/gris"
     tools:context=".Profile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="304dp"
-        android:text="@string/hello_blank_fragment" />
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/fragment_page_title"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="419dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dip"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="#fff"/>
-
-
+            android:onClick="deleteAccount"
+            android:text="Button" />
+    </LinearLayout>
 </FrameLayout>

@@ -1,15 +1,19 @@
 package com.example.trocker2;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.trocker2.model.Bdd;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -17,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Application extends AppCompatActivity {
+
+    private Application app = this;
 
     private BottomNavigationView bottomNavigationView;
 
@@ -78,5 +84,31 @@ public class Application extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void deleteAccount(View v){
+        AlertDialog.Builder deleteCompte = new AlertDialog.Builder(this);
+        deleteCompte.setMessage("Vous allez supprimer votre compte, êtes vous sûr de vous ?\n" +
+                "Tout vos objets seront supprimer des base de données");
+        deleteCompte.setCancelable(true);
+
+        deleteCompte.setPositiveButton(
+                "Je suis sûr",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Bdd.deleteCompte();
+                        Intent intent = new Intent(app, MainActivity.class);
+                        startActivity(intent);
+                        dialog.cancel();
+                    }
+                });
+        deleteCompte.setNegativeButton(
+                "J'ai changé d'avis",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        deleteCompte.show();
     }
 }
