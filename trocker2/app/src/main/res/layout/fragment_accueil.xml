@@ -27,33 +27,39 @@
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPagerProduit"
-            android:layout_width="338dp"
-            android:layout_height="374dp" />
+            android:layout_width="316dp"
+            android:layout_height="338dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/pouceHaut"
-                android:layout_width="135dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:src="@drawable/thumb_up" />
+                android:src="@drawable/thumb_up"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
 
             <ImageView
                 android:id="@+id/coeur"
-                android:layout_width="135dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/heart" />
 
             <ImageView
                 android:id="@+id/pouceBas"
-                android:layout_width="135dp"
+                android:layout_width="80dp"
                 android:layout_height="99dp"
                 android:layout_weight="0"
-                android:src="@drawable/dislike" />
+                android:src="@drawable/dislike"
+                android:layout_marginLeft="20dp"/>
 
         </LinearLayout>
 

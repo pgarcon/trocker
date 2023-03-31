@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,10 +27,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
  */
 public class Accueil extends Fragment {
 
+    private static int JAIME = 0;
+    private static int JAIMEPAS = 0;
+
     private static final String KEY_POSITION="position";
-    private PageAdaptateur pageAdaptateur;
+    private PageAdapteurPoduit adapteur;
     private int pos;
     private ViewPager viewPager;
+    private View result;
+
+    private static boolean aBouge = false;
+
+    private int positionCourante = 0;
 
     public Accueil() {
         // Required empty public constructor
@@ -46,6 +55,7 @@ public class Accueil extends Fragment {
         Bundle args = new Bundle();
         args.putInt(KEY_POSITION, param1);
 
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -53,6 +63,7 @@ public class Accueil extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adapteur = new PageAdapteurPoduit(getActivity().getSupportFragmentManager());
         if (getArguments() != null) {
             pos = getArguments().getInt(KEY_POSITION);
         }
@@ -62,11 +73,13 @@ public class Accueil extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // 3 - Get layout of PageFragment
-        View result = inflater.inflate(R.layout.fragment_accueil, container, false);
+        result = inflater.inflate(R.layout.fragment_accueil, container, false);
 
-        AfficherProduit fragment = (AfficherProduit) getChildFragmentManager().findFragmentById(R.id.fragment_prod);
+        //PageAdapteurPoduit adapteur = new PageAdapteurPoduit(getActivity().getSupportFragmentManager());
 
-        ViewPager viewPager = (ViewPager) result.findViewById(R.id.viewPagerProduit);
+        //AfficherProduit fragment = (AfficherProduit) getChildFragmentManager().findFragmentById(R.id.fragment_prod);
+
+        viewPager = (ViewPager) result.findViewById(R.id.viewPagerProduit);
 
         if(viewPager != null) {
             System.out.println("\n\nnon-null viewpager\n\n");
@@ -83,21 +96,32 @@ public class Accueil extends Fragment {
         if(viewPager == null){
             System.out.println("\n\nnull\n\n");
         }else {
-            this.pageAdaptateur = new PageAdaptateur(getActivity().getSupportFragmentManager());
-            this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"), "AfficherProduit");
-            this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"), "AfficherProduit");
-            this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit3", "mon produit 3"), "AfficherProduit");
+            //this.pageAdaptateur = new PageAdaptateur(getActivity().getSupportFragmentManager());
+            //this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"), "AfficherProduit");
+            //this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"), "AfficherProduit");
+            //this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit3", "mon produit 3"), "AfficherProduit");
 
             // Connecter l'adaptateur de page au ViewPager2
-            viewPager.setAdapter(pageAdaptateur);
-            viewPager.setCurrentItem(1, true);
+            //viewPager.setAdapter(pageAdaptateur);
+            //viewPager.setCurrentItem(1, true);
+
+            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"));
+            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"));
+            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit3", "mon produit 3"));;
+
+
+            viewPager.setAdapter(adapteur);
         }
 
         //textView.setText("Bienvenu " + position);
         Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
 
+        //ViewPager.OnPageChangeListener pager = new ViewPager.OnPageChangeListener();
+
         // Écouter les événements de changement de page dans le ViewPager
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            private int lastSelectedPage = 0;
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -105,9 +129,11 @@ public class Accueil extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                //pageAdaptateur.addFragmentAt(AfficherProduit.newInstance(R.drawable.four, "Produit2", "mon produit 2"), 0);
-                //pageAdaptateur.addFragmentAt(AfficherProduit.newInstance(R.drawable.four, "Produit2", "mon produit 2"), 2);
-                //pageAdaptateur.notifyDataSetChanged();
+                positionCourante = position;
+                if (position > lastSelectedPage) {
+                    lastSelectedPage = position;
+                    ajouterProduit(lastSelectedPage);
+                }
             }
 
             @Override
@@ -116,6 +142,71 @@ public class Accueil extends Fragment {
             }
         });
 
+
+        ImageView jaime = result.findViewById(R.id.pouceHaut);
+
+        jaime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reagit(JAIME);
+            }
+        });
+
+        ImageView jaimepas = result.findViewById(R.id.pouceBas);
+
+        jaimepas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reagit(JAIMEPAS);
+            }
+        });
+
+        ImageView jaimetrop = result.findViewById(R.id.coeur);
+
+        jaimetrop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reagit(-1);
+            }
+        });
+
         return result;
+    }
+
+
+    public void reagit(int valeur){
+        if(valeur == JAIME) {
+            System.out.println("position : \n " + positionCourante);
+            viewPager.setCurrentItem(positionCourante-2);
+            adapteur.removeFragment(positionCourante);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Autre produit", "Description du nouveau produit"), positionCourante+1);
+            positionCourante--;
+
+        }else if(valeur == JAIMEPAS){
+            System.out.println("position : \n " + positionCourante);
+
+            viewPager.setCurrentItem(positionCourante-2);
+            adapteur.removeFragment(positionCourante);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Autre produit", "Description du nouveau produit"), positionCourante+1);
+            positionCourante--;
+
+        }else{
+
+            System.out.println("position : \n " + positionCourante);
+
+            viewPager.setCurrentItem(positionCourante-2);
+            adapteur.removeFragment(positionCourante);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Autre produit", "Description du nouveau produit"), positionCourante+1);
+            positionCourante--;
+
+        }
+    }
+
+    private void ajouterProduit(int num){
+        adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"));
+    }
+
+    private void ajouterProduitA(int num, int position){
+        adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"), position);
     }
 }
