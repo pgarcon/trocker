@@ -1,4 +1,4 @@
-package com.example.trocker.model;
+package com.example.trocker2.model;
 
 public class Image {
     int id_image;

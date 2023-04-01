@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import com.example.trocker.model.Compte;
+import com.example.trocker2.model.Compte;
 import com.example.trocker2.model.Bdd;
 
 import java.util.ArrayList;
@@ -74,7 +74,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private com.example.trocker.model.Compte recupererInfos(){
+    private Compte recupererInfos(){
         EditText nomRec = (EditText) findViewById (R.id.nomSaisie);
         EditText prenomRec = (EditText) findViewById (R.id.prenomSaisie);
         EditText mailRec = (EditText) findViewById (R.id.emailSaisie);

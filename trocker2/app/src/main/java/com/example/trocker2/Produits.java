@@ -9,7 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.trocker2.model.Produit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +23,9 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class Produits extends Fragment {
+
+    private ListView listView;
+    private CustomAdapter adapter;
 
     private static final String KEY_POSITION="position";
     private int arg;
@@ -36,6 +45,8 @@ public class Produits extends Fragment {
         Bundle args = new Bundle();
         args.putInt(KEY_POSITION, param1);
 
+
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -54,16 +65,54 @@ public class Produits extends Fragment {
         // 3 - Get layout of PageFragment
         View result = inflater.inflate(R.layout.fragment_produits, container, false);
 
-        // 4 - Get widgets from layout and serialise it
-        TextView textView= result.findViewById(R.id.fragment_page_title);
+        listView = result.findViewById(R.id.listViewProd);
 
-        // 5 - Get data from Bundle (created in method newInstance)
-        int position = getArguments().getInt(KEY_POSITION, -1);
+        // Création de l'adaptateur
+        adapter = new CustomAdapter(getActivity(), getItems());
 
-        textView.setText("Page numéro "+position);
-
-        Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
+        // Définition de l'adaptateur pour la ListView
+        listView.setAdapter(adapter);
 
         return result;
+    }
+
+    private List<Produit> getItems() {
+        List<Produit> items = new ArrayList<>();
+
+
+        Produit p1 = new Produit();
+        Produit p2 = new Produit();
+        Produit p3 = new Produit();
+        Produit p4 = new Produit();
+        Produit p5 = new Produit();
+
+        p1.setId_produit(R.drawable.one);
+        p2.setId_produit(R.drawable.two);
+        p3.setId_produit(R.drawable.three);
+        p4.setId_produit(R.drawable.four);
+        p5.setId_produit(R.drawable.trousse);
+
+        p1.setNom_produit("Mon Produit");
+        p2.setNom_produit("Mon Produit");
+        p3.setNom_produit("Mon Produit");
+        p4.setNom_produit("Mon Produit");
+        p5.setNom_produit("ma trousse");
+
+
+        p1.setDescription_produit("Voici mon produit");
+        p2.setDescription_produit("Voici mon produit");
+        p3.setDescription_produit("Voici mon produit");
+        p4.setDescription_produit("Voici mon produit");
+        p5.setDescription_produit("Voici mon produit");
+
+
+        // Ajout de plusieurs items à la liste
+        items.add(p1);
+        items.add(p2);
+        items.add(p3);
+        items.add(p4);
+        items.add(p5);
+
+        return items;
     }
 }

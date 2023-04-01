@@ -1,4 +1,4 @@
-package com.example.trocker.model;
+package com.example.trocker2.model;
 
 public class Produit {
     private int id_produit;

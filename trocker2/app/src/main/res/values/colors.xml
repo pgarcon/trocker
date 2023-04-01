@@ -13,4 +13,5 @@
     <color name="nav_icon_selected">#020202</color>
     <color name="nav_icon_unselected">#017171</color>
     <color name="color_blue_app">#ABD8DA</color>
+    <color name="transparent_gris">#9CA0B0B1</color>
 </resources>

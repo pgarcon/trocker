@@ -9,8 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
-import com.example.trocker.model.BddCompte;
-import com.example.trocker.model.Compte;
+import com.example.trocker2.model.BddCompte;
+import com.example.trocker2.model.Compte;
 import com.example.trocker2.model.Bdd;
 
 import java.util.ArrayList;

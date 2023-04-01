@@ -3,7 +3,7 @@ package com.example.trocker2.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.trocker.model.Compte;
+import com.example.trocker2.model.Compte;
 
 public class Bdd {
 
