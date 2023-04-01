@@ -19,7 +19,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/filtreButton"
             android:layout_width="300dp"
             android:layout_height="35dp"
             android:layout_weight="0"

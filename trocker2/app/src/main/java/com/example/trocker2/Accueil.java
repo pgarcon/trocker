@@ -10,12 +10,17 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -37,6 +42,20 @@ public class Accueil extends Fragment {
     private View result;
 
     private static boolean aBouge = false;
+
+    private boolean informatiqueEtat;
+    private boolean domotiqueEtat;
+    private boolean electromenagerEtat;
+    private boolean jouetEtat;
+    private boolean jeuxVideoEtat;
+    private boolean plantesEtat;
+
+    CheckBox informatique;
+    CheckBox domotique;
+    CheckBox electromenager;
+    CheckBox jouet;
+    CheckBox jeuxVideo;
+    CheckBox plantes;
 
     private int positionCourante = 0;
 
@@ -74,6 +93,8 @@ public class Accueil extends Fragment {
                              Bundle savedInstanceState) {
         // 3 - Get layout of PageFragment
         result = inflater.inflate(R.layout.fragment_accueil, container, false);
+
+        Button button = getActivity().findViewById(R.id.filtreButton);
 
         //PageAdapteurPoduit adapteur = new PageAdapteurPoduit(getActivity().getSupportFragmentManager());
 
@@ -170,6 +191,33 @@ public class Accueil extends Fragment {
             }
         });
 
+        Button buttonFiltre = result.findViewById(R.id.filtreButton);
+        buttonFiltre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                afficherPopup();
+
+                if(informatiqueEtat){
+                    informatique.setChecked(true);
+                }
+                if(domotiqueEtat){
+                    domotique.setChecked(true);
+                }
+                if(electromenagerEtat){
+                    electromenager.setChecked(true);
+                }
+                if(jouetEtat){
+                    jouet.setChecked(true);
+                }
+                if(jeuxVideoEtat){
+                    jeuxVideo.setChecked(true);
+                }
+                if(plantesEtat){
+                    plantes.setChecked(true);
+                }
+            }
+        });
+
         return result;
     }
 
@@ -208,5 +256,49 @@ public class Accueil extends Fragment {
 
     private void ajouterProduitA(int num, int position){
         adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"), position);
+    }
+
+    private void afficherPopup() {
+        // Créer la vue de la pop-up
+        View popupView = getLayoutInflater().inflate(R.layout.popup_resources, null);
+
+        if(popupView != null) {
+
+            // Créer la pop-up
+            PopupWindow popupWindow = new PopupWindow(
+                    popupView,
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT
+            );
+
+            // Afficher la pop-up au centre de l'écran
+            popupWindow.showAtLocation(getActivity().getWindow().getDecorView().getRootView(), Gravity.CENTER, 0, 0);
+
+            // Récupérer les cases à cocher de la pop-up
+            informatique = popupView.findViewById(R.id.checkboxInformatique);
+            domotique = popupView.findViewById(R.id.checkboxDomotique);
+            electromenager = popupView.findViewById(R.id.checkboxElectromenager);
+            jouet = popupView.findViewById(R.id.checkboxJouet);
+            jeuxVideo = popupView.findViewById(R.id.checkboxJeuxVideo);
+            plantes = popupView.findViewById(R.id.checkboxPlantes);
+
+            // Écouter le clic sur le bouton de validation de la pop-up
+            Button validerButton = popupView.findViewById(R.id.valider_button);
+            validerButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Récupérer les états des cases à cocher
+                    informatiqueEtat = informatique.isChecked();
+                    domotiqueEtat = domotique.isChecked();
+                    electromenagerEtat = electromenager.isChecked();
+                    jouetEtat = jouet.isChecked();
+                    jeuxVideoEtat = jeuxVideo.isChecked();
+                    plantesEtat = plantes.isChecked();
+
+                    // Fermer la pop-up
+                    popupWindow.dismiss();
+                }
+            });
+        }
     }
 }

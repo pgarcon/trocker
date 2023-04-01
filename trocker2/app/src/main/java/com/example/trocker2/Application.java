@@ -10,8 +10,13 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.PopupWindow;
 
 import com.example.trocker2.model.Bdd;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -111,4 +116,11 @@ public class Application extends AppCompatActivity {
                 });
         deleteCompte.show();
     }
+
+
+
+
+    //fenetre d'accueil
+
+
 }

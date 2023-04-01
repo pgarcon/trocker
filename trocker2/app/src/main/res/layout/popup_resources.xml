@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/popup_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CD000000"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sélectionnez les filtres :"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/checkboxElectromenager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electromenager" />
+
+        <CheckBox
+            android:id="@+id/checkboxJouet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jouet" />
+
+        <CheckBox
+            android:id="@+id/checkboxJeuxVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JeuxVideo" />
+
+        <CheckBox
+            android:id="@+id/checkboxDomotique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Domotique" />
+
+        <CheckBox
+            android:id="@+id/checkboxPlantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plantes" />
+
+        <CheckBox
+            android:id="@+id/checkboxInformatique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informatique" />
+
+        <Button
+            android:id="@+id/valider_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valider" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
