@@ -96,10 +96,6 @@ public class Accueil extends Fragment {
 
         Button button = getActivity().findViewById(R.id.filtreButton);
 
-        //PageAdapteurPoduit adapteur = new PageAdapteurPoduit(getActivity().getSupportFragmentManager());
-
-        //AfficherProduit fragment = (AfficherProduit) getChildFragmentManager().findFragmentById(R.id.fragment_prod);
-
         viewPager = (ViewPager) result.findViewById(R.id.viewPagerProduit);
 
         if(viewPager != null) {
@@ -117,14 +113,6 @@ public class Accueil extends Fragment {
         if(viewPager == null){
             System.out.println("\n\nnull\n\n");
         }else {
-            //this.pageAdaptateur = new PageAdaptateur(getActivity().getSupportFragmentManager());
-            //this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"), "AfficherProduit");
-            //this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"), "AfficherProduit");
-            //this.pageAdaptateur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit3", "mon produit 3"), "AfficherProduit");
-
-            // Connecter l'adaptateur de page au ViewPager2
-            //viewPager.setAdapter(pageAdaptateur);
-            //viewPager.setCurrentItem(1, true);
 
             adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"));
             adapteur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"));
@@ -137,7 +125,6 @@ public class Accueil extends Fragment {
         //textView.setText("Bienvenu " + position);
         Log.e(getClass().getSimpleName(), "onCreateView called for fragment number "+position);
 
-        //ViewPager.OnPageChangeListener pager = new ViewPager.OnPageChangeListener();
 
         // Écouter les événements de changement de page dans le ViewPager
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

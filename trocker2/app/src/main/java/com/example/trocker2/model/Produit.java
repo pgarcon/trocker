@@ -1,5 +1,7 @@
 package com.example.trocker2.model;
 
+import android.graphics.Bitmap;
+
 public class Produit {
     private int id_produit;
     private String nom_produit;
@@ -7,6 +9,16 @@ public class Produit {
     private float prix_produit;
     private String type_produit;
     private Compte compte_produit;
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
+    private Bitmap image;
 
     public Compte getCompte_produit() {
         return compte_produit;

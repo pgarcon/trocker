@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#BFDEE1</color>
     <color name="transparent_black">#70FFFFFF</color>
+    <color name="transparent_ajouter_produit">#EE474545</color>
     <color name="gris">#979797</color>
     <color name="nav_icon_selected">#020202</color>
     <color name="nav_icon_unselected">#017171</color>

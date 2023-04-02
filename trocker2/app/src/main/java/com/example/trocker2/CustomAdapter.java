@@ -46,8 +46,23 @@ public class CustomAdapter extends ArrayAdapter {
         // Mise à jour des vues avec les données de l'item
         titreProduit.setText(item.getNom_produit());
         descrProduit.setText(item.getDescription_produit());
-        imageView.setImageResource(item.getId_produit());
+
+        if(item.getImage() != null){
+            imageView.setImageBitmap(item.getImage());
+        }else{
+            imageView.setImageResource(item.getId_produit());
+        }
 
         return convertView;
+    }
+
+
+    public void ajouterProduitDebut(Produit p){
+        items.add(0, p);
+        notifyDataSetChanged();
+    }
+
+    public void maj(){
+        notifyDataSetChanged();
     }
 }
