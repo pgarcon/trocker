@@ -17,6 +17,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.PopupWindow;
+import android.widget.RatingBar;
+
 
 import com.example.trocker2.model.Bdd;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -121,6 +123,5 @@ public class Application extends AppCompatActivity {
 
 
     //fenetre d'accueil
-
 
 }

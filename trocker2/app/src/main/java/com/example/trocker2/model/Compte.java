@@ -17,7 +17,7 @@ public class Compte {
     private String code_postale;
 
     public Compte(){}
-    public Compte(String nom, String prenom, String date, String mail, String mdp, String pays, String ville, String adresse, String complementAdress, String codePostal){
+    public Compte(String nom, String prenom, String date, String mail, String mdp, String pays, String ville, String adresse, String complementAdress, String codePostal, int note){
         this.nom = nom;
         this.prenom = prenom;
         this.date = date;
@@ -29,7 +29,7 @@ public class Compte {
         this.adresse = adresse;
         this.complement_adresse = complementAdress;
 
-        this.note_compte = -1;
+        this.note_compte = note;
     }
 
 

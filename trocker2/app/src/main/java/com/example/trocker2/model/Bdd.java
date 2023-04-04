@@ -21,9 +21,9 @@ public class Bdd {
 
     public static void initCompte(){
         if(!init) {
-            listeCompte.add(new Compte("Lemoult", "Nicolas", "", "nicolas.lemoult@gmail.com", "a12345", "France", "Le Mans", "10 rue nationale", "", "72100"));
-            listeCompte.add(new Compte("Garcon", "Pierre", "", "pierre.garcon@gmail.com", "a12345", "France", "Le Mans", "10 rue nationale", "", "72100"));
-            listeCompte.add(new Compte("Garcon", "Pierre", "", "a", "a", "France", "Le Mans", "10 rue nationale", "", "72100"));
+            listeCompte.add(new Compte("Lemoult", "Nicolas", "", "nicolas.lemoult@gmail.com", "a12345", "France", "Le Mans", "10 rue nationale", "", "72100", 1));
+            listeCompte.add(new Compte("Garcon", "Pierre", "", "pierre.garcon@gmail.com", "a12345", "France", "Le Mans", "10 rue nationale", "", "72100", 5));
+            listeCompte.add(new Compte("Garcon", "Pierre", "", "a", "a", "France", "Le Mans", "10 rue nationale", "", "72100", 3));
             Bdd.init = true;
         }
     }
@@ -88,4 +88,5 @@ public class Bdd {
     public static void deleteCompte(){
         listeCompte.remove(actif);
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.trocker2;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.trocker2.model.Bdd;
@@ -43,6 +45,7 @@ public class Profile extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             arg = getArguments().getInt(KEY_POSITION);
         }
@@ -53,6 +56,9 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         // 3 - Get layout of PageFragment
         View result = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        RatingBar barre = result.findViewById(R.id.ratingBar);
+        barre.setRating(Bdd.getActif().getNote_compte());
 
         return result;
     }

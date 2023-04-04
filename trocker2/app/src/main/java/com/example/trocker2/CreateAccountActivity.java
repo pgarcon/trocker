@@ -97,6 +97,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         String cmplAdress = complementAdresseRec.getText().toString();
         String codePostal = codePostalRec.getText().toString();
 
-        return new Compte(nom, prenom, dateNaiss, mail, mdp, pays, ville, adress, cmplAdress, codePostal);
+        return new Compte(nom, prenom, dateNaiss, mail, mdp, pays, ville, adress, cmplAdress, codePostal, 0);
     }
 }
