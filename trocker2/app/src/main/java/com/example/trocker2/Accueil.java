@@ -33,7 +33,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Accueil extends Fragment {
 
     private static int JAIME = 0;
-    private static int JAIMEPAS = 0;
+    private static int JAIMEPAS = 1;
 
     private static final String KEY_POSITION="position";
     private PageAdapteurPoduit adapteur;
@@ -138,6 +138,7 @@ public class Accueil extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 positionCourante = position;
+                System.out.println("\nposition courante : " + position + "\n");
                 if (position > lastSelectedPage) {
                     lastSelectedPage = position;
                     ajouterProduit(lastSelectedPage);
@@ -210,35 +211,46 @@ public class Accueil extends Fragment {
 
 
     public void reagit(int valeur){
+        int exPos = positionCourante;
         if(valeur == JAIME) {
             System.out.println("position : \n " + positionCourante);
-            viewPager.setCurrentItem(positionCourante-2);
-            adapteur.removeFragment(positionCourante);
-            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Autre produit", "Description du nouveau produit"), positionCourante+1);
-            positionCourante--;
+            viewPager.setCurrentItem(positionCourante-1);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.like, "Autre produit", "Description du nouveau produit"), exPos);
+            adapteur.removeFragment(exPos+1);
 
         }else if(valeur == JAIMEPAS){
             System.out.println("position : \n " + positionCourante);
 
-            viewPager.setCurrentItem(positionCourante-2);
-            adapteur.removeFragment(positionCourante);
-            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Autre produit", "Description du nouveau produit"), positionCourante+1);
-            positionCourante--;
+            viewPager.setCurrentItem(positionCourante-1);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.dislike, "Autre produit", "Description du nouveau produit"), exPos);
+            adapteur.removeFragment(exPos+1);positionCourante--;
 
         }else{
 
             System.out.println("position : \n " + positionCourante);
 
-            viewPager.setCurrentItem(positionCourante-2);
-            adapteur.removeFragment(positionCourante);
-            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.one, "Autre produit", "Description du nouveau produit"), positionCourante+1);
-            positionCourante--;
+            viewPager.setCurrentItem(positionCourante-1);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.ratporc, "Rat Porc", "Description du nouveau produit"), exPos);
+            adapteur.removeFragment(exPos+1);
 
         }
     }
 
     private void ajouterProduit(int num){
-        adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"));
+        switch(num%3){
+            case 0 :
+                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"));
+                break;
+
+            case 1 :
+                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Nouveau produit " + num, "Description du nouveau produit"));
+                break;
+
+            case 2 :
+                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.three, "Nouveau produit " + num, "Description du nouveau produit"));
+                break;
+        }
+        //adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"));
     }
 
     private void ajouterProduitA(int num, int position){
