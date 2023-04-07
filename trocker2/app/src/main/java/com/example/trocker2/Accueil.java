@@ -114,9 +114,9 @@ public class Accueil extends Fragment {
             System.out.println("\n\nnull\n\n");
         }else {
 
-            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit1", "mon produit 1"));
-            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Produit2", "mon produit 2"));
-            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Produit3", "mon produit 3"));;
+            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.chaise, "une chaise", "mon produit 1"));
+            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.pc, "PC gamer", "mon produit 2"));
+            adapteur.addFragment(AfficherProduit.newInstance(R.drawable.canard, "Petit canard", "mon produit 3"));;
 
 
             viewPager.setAdapter(adapteur);
@@ -215,14 +215,14 @@ public class Accueil extends Fragment {
         if(valeur == JAIME) {
             System.out.println("position : \n " + positionCourante);
             viewPager.setCurrentItem(positionCourante-1);
-            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.like, "Autre produit", "Description du nouveau produit"), exPos);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.peinture, "Lot peinture", "Description du nouveau produit"), exPos);
             adapteur.removeFragment(exPos+1);
 
         }else if(valeur == JAIMEPAS){
             System.out.println("position : \n " + positionCourante);
 
             viewPager.setCurrentItem(positionCourante-1);
-            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.dislike, "Autre produit", "Description du nouveau produit"), exPos);
+            adapteur.addFragmentAt(AfficherProduit.newInstance(R.drawable.ps4, "playstation 4", "Description du nouveau produit"), exPos);
             adapteur.removeFragment(exPos+1);positionCourante--;
 
         }else{
@@ -239,15 +239,15 @@ public class Accueil extends Fragment {
     private void ajouterProduit(int num){
         switch(num%3){
             case 0 :
-                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"));
+                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.aspi, "Aspirateur robot ", "Description du nouveau produit"));
                 break;
 
             case 1 :
-                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.two, "Nouveau produit " + num, "Description du nouveau produit"));
+                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.jouet1, "Jouet enfant train", "Description du nouveau produit"));
                 break;
 
             case 2 :
-                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.three, "Nouveau produit " + num, "Description du nouveau produit"));
+                adapteur.addFragment(AfficherProduit.newInstance(R.drawable.jouet2, "Jouet Enfant Anneaux", "Description du nouveau produit"));
                 break;
         }
         //adapteur.addFragment(AfficherProduit.newInstance(R.drawable.one, "Nouveau produit " + num, "Description du nouveau produit"));

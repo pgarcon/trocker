@@ -164,7 +164,7 @@ public class Produits extends Fragment {
                     // Récupérer les informations
                     p.setDescription_produit(editTextDescription.getText().toString());
                     p.setNom_produit(editTextTitre.getText().toString());
-                    p.setId_produit(R.drawable.heart_hand_blue);
+                    p.setId_produit(R.drawable.person);
 
                     System.out.println("\nNom produit ajouté : "+ p.getNom_produit() + "\n");
 

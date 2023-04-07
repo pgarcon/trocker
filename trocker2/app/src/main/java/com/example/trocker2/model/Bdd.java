@@ -35,24 +35,24 @@ public class Bdd {
         Produit p4 = new Produit();
         Produit p5 = new Produit();
 
-        p1.setId_produit(R.drawable.one);
-        p2.setId_produit(R.drawable.two);
-        p3.setId_produit(R.drawable.three);
+        p1.setId_produit(R.drawable.chaise);
+        p2.setId_produit(R.drawable.pc);
+        p3.setId_produit(R.drawable.gaz);
         p4.setId_produit(R.drawable.four);
         p5.setId_produit(R.drawable.trousse);
 
-        p1.setNom_produit("Mon Produit");
-        p2.setNom_produit("Mon Produit");
-        p3.setNom_produit("Mon Produit");
-        p4.setNom_produit("Mon Produit");
-        p5.setNom_produit("ma trousse");
+        p1.setNom_produit("Chaise simple");
+        p2.setNom_produit("PC gamer");
+        p3.setNom_produit("Gazinère portable");
+        p4.setNom_produit("Four");
+        p5.setNom_produit("Trousse");
 
 
-        p1.setDescription_produit("Voici mon produit");
-        p2.setDescription_produit("Voici mon produit");
-        p3.setDescription_produit("Voici mon produit");
-        p4.setDescription_produit("Voici mon produit");
-        p5.setDescription_produit("Voici mon produit");
+        p1.setDescription_produit("Une chaise simple, pratique et confortable");
+        p2.setDescription_produit("PC gamer RTX4070");
+        p3.setDescription_produit("Gazinière pratique");
+        p4.setDescription_produit("Four incroyable, vous n'allez pas en croie vos yeux");
+        p5.setDescription_produit("une trousse");
 
 
         // Ajout de plusieurs items à la liste
